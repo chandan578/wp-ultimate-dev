@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Our Test Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-14 10:01+0000\n"
+"PO-Revision-Date: 2025-07-14 10:15+0000\n"
+"Last-Translator: Chandan\n"
+"Language-Team: Hindi\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.27\n"
+"X-Domain: wcpdomain"
+
+#. Description of the plugin
+msgid "A truly  amazing plugin."
+msgstr "सचमुच एक अद्भुत प्लगइन."
+
+#. Author of the plugin
+msgid "Chandan"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://leetcode.com/u/chandan578/"
+msgstr ""
+
+#. Name of the plugin
+msgid "Our Test Plugin"
+msgstr "हमारा परीक्षण प्लगइन"
+
+#: our-first-unique-plugin.php:117
+msgid "Word Count"
+msgstr "वर्ड काउंटर"
+
+#: our-first-unique-plugin.php:45
+msgid "words"
+msgstr "शब्द"

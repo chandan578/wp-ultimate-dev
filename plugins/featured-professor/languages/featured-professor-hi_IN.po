@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Featured Professor Block Type\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-18 05:56+0000\n"
+"PO-Revision-Date: 2025-07-18 05:58+0000\n"
+"Last-Translator: Chandan\n"
+"Language-Team: Hindi\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.27\n"
+"X-Domain: featured-professor"
+
+#. Name of the plugin
+msgid "Featured Professor Block Type"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.udemy.com/user/bradschiff/"
+msgstr ""
+
+#: build/index.js:212 src/index.js:69
+msgid "Select a professor"
+msgstr "एक प्रोफेसर का चयन करें"
+
+#. Author of the plugin
+msgid "Your Name Here"
+msgstr ""

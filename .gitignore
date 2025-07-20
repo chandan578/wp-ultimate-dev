@@ -1,0 +1,11 @@
+# .gitignore
+node_modules/
+vendor/
+*.log
+*.zip
+.DS_Store
+*.bak
+wp-config.php
+.htaccess
+.env
+uploads/
