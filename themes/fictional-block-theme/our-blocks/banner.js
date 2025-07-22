@@ -12,7 +12,7 @@ registerBlockType("ourblocktheme/banner", {
   attributes: {
     align: { type: "string", default: "full" },
     imgID: { type: "number" },
-    imgURL: { type: "string" }
+    imgURL: { type: "string" , default: window.banner.fallbackimage}
   },
   edit: EditComponent,
   save: SaveComponent
@@ -21,7 +21,8 @@ registerBlockType("ourblocktheme/banner", {
 function EditComponent(props) {
   useEffect(
     function () {
-      async function go() {
+      if(props.attributes.imgID){
+        async function go() {
         const response = await apiFetch({
           path: `/wp/v2/media/${props.attributes.imgID}`,
           method: "GET"
@@ -29,6 +30,7 @@ function EditComponent(props) {
         props.setAttributes({ imgURL: response.media_details.sizes.pageBanner.source_url })
       }
       go()
+      }
     },
     [props.attributes.imgID]
   )

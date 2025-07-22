@@ -133,9 +133,9 @@ module.exports = window["ReactJSXRuntime"];
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-/*!******************************!*\
-  !*** ./our-blocks/banner.js ***!
-  \******************************/
+/*!*****************************!*\
+  !*** ./our-blocks/slide.js ***!
+  \*****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
@@ -155,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)("ourblocktheme/banner", {
-  title: "Banner",
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)("ourblocktheme/slide", {
+  title: "Slide",
   supports: {
     align: ["full"]
   },
@@ -218,19 +218,20 @@ function EditComponent(props) {
           })
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "page-banner",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "page-banner__bg-image",
-        style: {
-          backgroundImage: `url('${props.attributes.imgURL}')`
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "page-banner__content container t-center c-white",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-          allowedBlocks: ["ourblocktheme/genericheading", "ourblocktheme/genericbutton"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "hero-slider__slide",
+      style: {
+        backgroundImage: `url('${props.attributes.imgURL}')`
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "her-slider__interior container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "hero-slider__overlay t-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+            allowedBlocks: ["ourblocktheme/genericheading", "ourblocktheme/genericbutton"]
+          })
         })
-      })]
+      })
     })]
   });
 }
@@ -241,4 +242,4 @@ function SaveComponent() {
 
 /******/ })()
 ;
-//# sourceMappingURL=banner.js.map
+//# sourceMappingURL=slide.js.map
