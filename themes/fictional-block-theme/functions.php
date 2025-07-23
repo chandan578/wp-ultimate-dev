@@ -17,15 +17,15 @@ add_action('rest_api_init', 'university_custom_rest');
 
 function pageBanner($args = NULL) {
   
-  if (!$args['title']) {
+  if (!isset($args['title'])) {
     $args['title'] = get_the_title();
   }
 
-  if (!$args['subtitle']) {
+  if (!isset($args['subtitle'])) {
     $args['subtitle'] = get_field('page_banner_subtitle');
   }
 
-  if (!$args['photo']) {
+  if (!isset($args['photo'])) {
     if (get_field('page_banner_background_image') AND !is_archive() AND !is_home() ) {
       $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
     } else {
@@ -189,7 +189,6 @@ class PlaceholderBlock {
   function onInit() {
     wp_register_script($this->name, get_stylesheet_directory_uri() . "/our-blocks/{$this->name}.js", array('wp-blocks', 'wp-editor'));
     
-
     register_block_type("ourblocktheme/{$this->name}", array(
       'editor_script' => $this->name,
       'render_callback' => [$this, 'ourRenderCallback']
@@ -197,12 +196,27 @@ class PlaceholderBlock {
   }
 }
 
-new PlaceholderBlock('eventsandblogs');
-new PlaceholderBlock('header');
-new PlaceholderBlock('footer');
+new PlaceholderBlock("eventsandblogs");
+new PlaceholderBlock("header");
+new PlaceholderBlock("footer");
+new PlaceholderBlock("singlepost");
+new PlaceholderBlock("page");
+new PlaceholderBlock("blogindex");
+new PlaceholderBlock("programarchive");
+new PlaceholderBlock("singleprogram");
+new PlaceholderBlock("singleprofessor");
+new PlaceholderBlock("mynotes");
+new PlaceholderBlock("archivecampus");
+new PlaceholderBlock("archiveevent");
+new PlaceholderBlock("archive");
+new PlaceholderBlock("pastevents");
+new PlaceholderBlock("search");
+new PlaceholderBlock("searchresults");
+new PlaceholderBlock("singlecampus");
+new PlaceholderBlock("singleevent");
 
 class JSXBlock {
-  function __construct($name, $renderCallback = null, $data=null) {
+  function __construct($name, $renderCallback = null, $data = null) {
     $this->name = $name;
     $this->data = $data;
     $this->renderCallback = $renderCallback;
@@ -218,7 +232,7 @@ class JSXBlock {
   function onInit() {
     wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
     
-    if($this->data){
+    if ($this->data) {
       wp_localize_script($this->name, $this->name, $this->data);
     }
 
@@ -237,5 +251,18 @@ class JSXBlock {
 new JSXBlock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
 new JSXBlock('genericheading');
 new JSXBlock('genericbutton');
-new JSXBlock("slideshow", true);
-new JSXBlock("slide", true);
+new JSXBlock('slideshow', true);
+new JSXBlock('slide', true, ['themeimagepath' => get_theme_file_uri('/images/')]);
+
+function myallowedblocks($allowed_block_types, $editor_context) {
+  // If you are on a page/post editor screen
+  if (!empty($editor_context->post)) {
+    return $allowed_block_types;
+  }
+
+  // if you are on the FSE screen
+  return array('ourblocktheme/header', 'ourblocktheme/footer');
+}
+
+// Uncomment the line below if you actually want to restrict which block types are allowed
+//add_filter('allowed_block_types_all', 'myallowedblocks', 10, 2);
